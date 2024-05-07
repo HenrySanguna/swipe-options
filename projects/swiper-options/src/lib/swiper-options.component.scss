@@ -20,6 +20,11 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    width: 100%;
+    padding: 0.7rem;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .04);
 }
 
 .list .button-options {
@@ -34,6 +39,7 @@
     top: 1px;
     bottom: 1px;
     margin: 10px 0;
+
     &.left {
         justify-content: flex-start;
         left: 1px;
@@ -44,7 +50,8 @@
         right: 1px;
         justify-content: flex-end;
     }
-    button{
+
+    button {
         height: 100%;
     }
 }
