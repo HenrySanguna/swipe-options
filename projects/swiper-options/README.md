@@ -1,24 +1,129 @@
-# SwiperOptionsComponets
+# swipe-options
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+Library that allows shifting elements of a list to the right or left to display multiple options to execute for each element.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project swiper-options` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project swiper-options`.
-> Note: Don't forget to add `--project swiper-options` or else it will be added to the default project in your `angular.json` file. 
+You can install this library via npm. Make sure you have Node.js installed on your system before running the following command:
 
-## Build
+```bash
+npm install swipe-options
+```
 
-Run `ng build swiper-options` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Important
 
-## Publishing
+It's necessary to install animejs for the proper functioning of this library.
 
-After building your library with `ng build swiper-options`, go to the dist folder `cd dist/swiper-options` and run `npm publish`.
+```bash
+npm install animejs@3.2.2
+```
 
-## Running unit tests
+## Features
 
-Run `ng test swiper-options` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  * Shift an element of a list on both sides through animation.
+  * Display multiple options related to the shifted item (it is recommended to use a maximum of 4 options per side).
+  * Customizable content through a template.
 
-## Further help
+<p align="center">
+  <img src="https://github.com/HenrySanguna/swipe-options/assets/60330730/4d1ece32-bca3-44d2-b990-907588d84e2a" alt="GIF Swipe Options">
+</p>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Usage
+
+  * Options structure
+
+    ```typescript
+    options: any =
+    {
+      optionsLeft: [{
+        name: "Editar",
+        icon: "bx bx-edit",
+        background: "success",
+        action: () => {
+        }
+      },
+      {
+        name: "Editar",
+        icon: "bx bx-edit",
+        background: "info",
+        action: () => { }
+      },
+      {
+        name: "Editar",
+        icon: "bx bx-edit",
+        background: "primary",
+        action: () => { }
+      },
+      {
+        name: "Editar",
+        icon: "bx bx-edit",
+        background: "secondary",
+        action: () => { }
+      }],
+      optionsRight: [{
+        name: "Editar",
+        icon: "bx bx-edit",
+        background: "danger",
+        action: () => { }
+      },
+      {
+        name: "Editar",
+        icon: "bx bx-edit",
+        background: "warning",
+        action: () => { }
+      }]
+    };
+    ```
+    * Data structure to display in the template
+
+      ```typescript
+      data: any[] = [{
+      id: 1,
+      name: "Chris Evans",
+      description: "Captain America"
+      },
+      {
+      id: 2,
+      name: "Scarlett Johansson",
+      description: "Black Widow"
+      },
+      {
+      id: 3,
+      name: "Chris Hemsworth",
+      description: "Thora"
+      },
+      {
+      id: 4,
+      name: "Brie Larson",
+      description: "Captain Marvel"
+      }
+      ```
+
+    * Example of a template per list item
+   
+      ```html
+      <ng-template #templateData let-item="item">
+      <div class="list-content">
+      <div class="profile">
+      <h3>{{item.name}}</h3>
+      </div>
+      <div class="subtitle">
+      <h4>{{item.description}}</h4>
+      </div>
+      <div class="subtitle">
+      <h4>{{item.description}}</h4>
+      </div>
+      <div class="subtitle">
+      <h4>{{item.description}}</h4>
+      </div>
+      </div>
+      </ng-template>
+      <lib-swiper-options [options]="options" [data]="data" [templateData]="templateData"></lib-swiper-options>
+      ```
+
+  ## Contribution
+    If you encounter any issues or have any suggestions for improving this library, feel free to open an issue or submit a pull request.
+
+  ## License
+    This project is licensed under the MIT License.

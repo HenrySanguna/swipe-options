@@ -8,6 +8,7 @@ import anime from 'animejs';
   imports: [CommonModule],
   styleUrl: './swiper-options.component.scss',
   templateUrl: 'swiper-options.component.html',
+  exportAs: 'swiper-options'
 })
 export class SwiperOptionsComponent {
   @Input() data: any[] = [];
