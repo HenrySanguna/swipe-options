@@ -1,4 +1,4 @@
-## swipe-options
+## swiper-options
 
 Library that allows dragging elements of a list to the right or left, to display multiple options to execute for each item.
 
@@ -7,7 +7,7 @@ Library that allows dragging elements of a list to the right or left, to display
 You can install this library via npm. Make sure you have Node.js installed on your system before running the following command:
 
 ```bash
-npm install swipe-options
+npm install swiper-options
 ```
 
 ## Important
